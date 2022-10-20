@@ -4,10 +4,14 @@ import {
   TextInput,
   View,
   Text,
+  Image,
   ScrollView,
   TouchableOpacity,
   KeyboardAvoidingView,
 } from 'react-native';
+ import styles from './styles';
+import Lottie from 'lottie-react-native';
+
 
 import auth from '@react-native-firebase/auth';
 
@@ -57,30 +61,49 @@ const LoginScreen = ({navigation}) => {
           justifyContent: 'center',
           alignContent: 'center',
         }}>
-        <View>
+        <View style={styles.signupPage}>
+        <Lottie
+        source={require('../../Assets/lf30_editor_0ud81645.json')}
+        autoPlay
+        loop
+        style={styles.SigupPageAnime}
+      />
+      <Text style={styles.signupHeader}>Let's you in</Text>
           <KeyboardAvoidingView enabled>
             <View >
               <TextInput
-               
+                 style={styles.input}
                 onChangeText={UserEmail => setUserEmail(UserEmail)}
                 placeholder="Enter Email"
               />
             </View>
-            <View>
+            <View  style={styles.signupPages}>
               <TextInput
-                
+                 style={styles.input}
                 onChangeText={UserPassword => setUserPassword(UserPassword)}
                 placeholder="Enter Password"
                 ref={passwordInputRef}
               />
-            </View>
-            {errortext != '' ? <Text> {errortext} </Text> : null}
-            <TouchableOpacity activeOpacity={0.5} onPress={handleSubmitPress}>
-              <Text>LOGIN</Text>
+               <TouchableOpacity activeOpacity={0.5} onPress={handleSubmitPress}>
+              <Text style={styles.siginbtn}>LOGIN</Text>
             </TouchableOpacity>
-            <Text onPress={() => navigation.navigate('RegisterScreen')}>
+            {errortext != '' ? <Text> {errortext} </Text> : null}
+      <Text style={styles.or}>or</Text>
+
+            <TouchableOpacity style={styles.googleSignUpBtn}>
+        <Text style={styles.signupBtnText}>Continue with Google</Text>
+        <Image
+          source={require('../../Assets/googlelogo.png')}
+          style={styles.googleLogo}></Image>
+      </TouchableOpacity>
+
+           
+            <Text onPress={() => navigation.navigate('RegisterScreen')}
+            style={styles.sigin} >
               New Here ? Register
             </Text>
+      </View>
+
           </KeyboardAvoidingView>
         </View>
       </ScrollView>
