@@ -37,12 +37,11 @@ const RegisterScreen = ({navigation}) => {
               displayName: userName,
               photoURL: 'https://aboutreact.com/profile.png',
             })
-            .then(() => navigation.navigate("LoginScreen"))
+            .then(() => navigation.navigate('LoginScreen'))
             .catch(error => {
               alert(error);
               console.error(error);
             });
-            
         }
       })
       .catch(error => {
@@ -70,9 +69,8 @@ const RegisterScreen = ({navigation}) => {
               placeholder="Enter Name"
             />
           </View>
-          <View >
+          <View>
             <TextInput
-              
               onChangeText={UserEmail => setUserEmail(UserEmail)}
               placeholder="Enter Email"
               keyboardType="email-address"

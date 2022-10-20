@@ -15,8 +15,8 @@ const Navigation = () => {
           gestureEnabled: true,
           gestureDirection: 'vertical',
         }}>
-        <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="DashBoardPage" component={DashBoardPage} />
       </Stack.Navigator>
     </NavigationContainer>
