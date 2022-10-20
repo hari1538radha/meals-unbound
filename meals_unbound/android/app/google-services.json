@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1094141680922",
+    "project_id": "soru-62824",
+    "storage_bucket": "soru-62824.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094141680922:android:7e139c9f1c2601d27960a3",
+        "android_client_info": {
+          "package_name": "com.meals_unbound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094141680922-elh50n2d26uk11u95at5ptjkprrorcjf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-_FlPfsq4v-DkfmvHxEchCFtoTdov9D0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094141680922-elh50n2d26uk11u95at5ptjkprrorcjf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
