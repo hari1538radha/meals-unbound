@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import styles from './styles';
+import Lottie from 'lottie-react-native';
 const RegisterScreen = ({navigation}) => {
   const [userName, setUserName] = useState('');
   const [userEmail, setUserEmail] = useState('');
@@ -55,45 +56,57 @@ const RegisterScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+    <SafeAreaView style={{ backgroundColor: 'white'}}>
       <ScrollView
         keyboardShouldPersistTaps="handled"
         contentContainerStyle={{
           justifyContent: 'center',
           alignContent: 'center',
         }}>
-        <KeyboardAvoidingView enabled>
-          <View>
-            <TextInput
-              onChangeText={UserName => setUserName(UserName)}
-              placeholder="Enter Name"
-            />
-          </View>
-          <View>
-            <TextInput
-              onChangeText={UserEmail => setUserEmail(UserEmail)}
-              placeholder="Enter Email"
-              keyboardType="email-address"
-              ref={emailInputRef}
-            />
-          </View>
-          <View>
-            <TextInput
-              onChangeText={UserPassword => setUserPassword(UserPassword)}
-              placeholder="Enter Password"
-              ref={passwordInputRef}
-              returnKeyType="next"
-              secureTextEntry={true}
-              onSubmitEditing={Keyboard.dismiss}
-            />
-          </View>
-          {errortext != '' ? <Text> {errortext} </Text> : null}
-          <TouchableOpacity activeOpacity={0.5} onPress={handleSubmitButton}>
-            <Text>REGISTER</Text>
-          </TouchableOpacity>
-        </KeyboardAvoidingView>
+        <View style={styles.mainContainer}>
+          <KeyboardAvoidingView enabled>
+            <View style={styles.SigUpContainer}>
+
+             
+            </View>
+
+            <View style={styles.formContainer}>
+              <TextInput
+                style={styles.inputName}
+                onChangeText={UserName => setUserName(UserName)}
+                placeholder="Enter Name"
+              />
+
+              <TextInput
+                style={styles.input}
+                onChangeText={UserEmail => setUserEmail(UserEmail)}
+                placeholder="Enter Email"
+                keyboardType="email-address"
+                ref={emailInputRef}
+              />
+
+              <TextInput
+                onChangeText={UserPassword => setUserPassword(UserPassword)}
+                placeholder="Enter Password"
+                style={styles.input}
+                ref={passwordInputRef}
+                returnKeyType="next"
+                secureTextEntry={true}
+                onSubmitEditing={Keyboard.dismiss}
+              />
+
+              {errortext != '' ? <Text> {errortext} </Text> : null}
+              <TouchableOpacity
+                activeOpacity={0.5}
+                onPress={handleSubmitButton}
+                style={styles.registerBtn}>
+                <Text>REGISTER</Text>
+              </TouchableOpacity>
+            </View>
+          </KeyboardAvoidingView>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
-export default RegisterScreen;
+export default RegisterScreen
